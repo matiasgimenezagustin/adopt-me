@@ -25,7 +25,15 @@ const generateData = async (req, res) => {
         if (!users || !pets) {
             throw new CustomError(
                 errorDictionary.MISSING_PARAMETERS.code,
-                errorDictionary.MISSING_PARAMETERS.message
+                errorDictionary.MISSING_PARAMETERS.message,
+                'users and pets are required'
+            );
+        }
+        if (typeof users !== 'number' || typeof pets !== 'number') {
+            throw new CustomError(
+                errorDictionary.VALIDATION_ERROR.code,
+                errorDictionary.VALIDATION_ERROR.message,
+                'users and pets must be numbers'
             );
         }
 
@@ -38,7 +46,7 @@ const generateData = async (req, res) => {
             data: { users: generatedUsers, pets: generatedPets }
         });
     } catch (error) {
-        console.log(error);
+
         handleError(error, res);
     }
 };

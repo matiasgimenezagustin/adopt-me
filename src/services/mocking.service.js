@@ -55,7 +55,8 @@ class MockingService {
                 if (!['user', 'admin'].includes(user.role)) {
                     throw new CustomError(
                         errorDictionary.INVALID_ROLE.code,
-                        errorDictionary.INVALID_ROLE.message
+                        errorDictionary.INVALID_ROLE.message,
+                        'Invalid user role provided'
                     );
                 }
 
@@ -68,7 +69,7 @@ class MockingService {
             throw new CustomError(
                 errorDictionary.MOCKING_ERROR.code,
                 errorDictionary.MOCKING_ERROR.message,
-                error.message
+                error.message,
             );
         }
     }

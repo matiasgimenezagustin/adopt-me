@@ -12,7 +12,7 @@ const createPet = async (req, res) => {
     try {
         const { name, specie, birthDate } = req.body;
         if (!name || !specie || !birthDate) {
-            throw new CustomError(errorDictionary.INCOMPLETE_VALUES.code, errorDictionary.INCOMPLETE_VALUES.message);
+            throw new CustomError(errorDictionary.INCOMPLETE_VALUES.code, errorDictionary.INCOMPLETE_VALUES.message, 'Name, specie and birthDate are required');
         }
         const pet = PetDTO.getPetInputFrom({ name, specie, birthDate });
         const result = await petsService.create(pet);

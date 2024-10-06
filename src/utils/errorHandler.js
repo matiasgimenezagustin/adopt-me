@@ -40,6 +40,7 @@ export const errorDictionary = {
         code: 400,
         message: 'Missing required parameters'
     },
+    
 };
 
 
