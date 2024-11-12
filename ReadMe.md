@@ -78,7 +78,6 @@ DELETE /pets/:pid
 
 https://hub.docker.com/layers/testdev34/adopt-me/v1/images/sha256-7b5d02b864e169b43344c3daaee4b4e98f29b50cbd64471d1439d082cbbcd83b?context=repo
 
-
 ## Docker
 
 Puedes ejecutar este proyecto usando Docker.
